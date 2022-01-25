@@ -1,0 +1,28 @@
+---
+- name: Load variables
+  include_tasks: setup_vars.yml
+
+- name: Add custom repos for Ubuntu
+  apt_repository:
+    repo: "deb {{ repository_host }}/{{ item.path }} {{ item.dist }} main {{ item.additional }}"
+    filename: "{{ item.dist }}-proxy"
+    state: present
+    update_cache: no
+  loop: "{{ repository_paths }}"
+
+- name: Deactivate default repos
+  replace:
+    path: /etc/apt/sources.list
+    regexp: '^deb'
+    replace: '#deb'
+
+- name: Update Cache
+  apt:
+    update_cache: yes
+  when: update_cache
+
+- name: Upgrade System
+  apt:
+    upgrade: yes
+    autoremove: yes
+  when: upgrade_system

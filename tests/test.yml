@@ -1,0 +1,6 @@
+---
+- hosts: default
+  roles:
+    - role: pmoscode.custom-apt-repository
+      vars:
+        repository_host: http://10.0.1.165:8081

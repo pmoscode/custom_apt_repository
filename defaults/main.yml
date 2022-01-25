@@ -1,0 +1,5 @@
+---
+repository_host: localhost
+upgrade_system: no
+update_cache: no
+repository_paths: []

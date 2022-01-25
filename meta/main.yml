@@ -1,0 +1,30 @@
+galaxy_info:
+  role_name: custom_apt_repository
+  namespace: pmoscode
+
+  author: pmoscode
+  description: Role which replaces the deafult apt repository configuration to a custom proxy one.
+
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - bionic
+
+    - name: Debian
+      versions:
+        - bullseye
+        - buster
+
+  galaxy_tags:
+    - ubuntu
+    - debian
+    - apt
+    - repository
+    - proxy
+
+dependencies: []

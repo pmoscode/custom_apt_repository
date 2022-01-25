@@ -1,0 +1,5 @@
+---
+repository_paths:
+  - { dist: "buster", path: "repository/debian_buster/", additional: "" }
+  - { dist: "buster-security", path: "repository/debian_buster_security/", additional: "" }
+  - { dist: "buster-updates", path: "repository/debian_buster_updates/", additional: "" }

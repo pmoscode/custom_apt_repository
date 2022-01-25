@@ -1,0 +1,5 @@
+---
+repository_paths:
+  - { dist: "bionic", path: "repository/ubuntu_bionic/", additional: "restricted universe multiverse" }
+  - { dist: "bionic-security", path: "repository/ubuntu_bionic_security/", additional: "restricted universe multiverse" }
+  - { dist: "bionic-updates", path: "repository/ubuntu_bionic_updates/", additional: "restricted universe multiverse" }

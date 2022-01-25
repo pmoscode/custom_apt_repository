@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+
+  roles:
+    - role: pmoscode.custom_apt_repository
+#    - role: custom_apt_repository

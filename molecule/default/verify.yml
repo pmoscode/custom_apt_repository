@@ -1,0 +1,28 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: true
+
+  tasks:
+  - name: Test if sources files exists
+    stat:
+      path: "/etc/apt/sources.list.d/{{ item }}-proxy.list"
+    loop:
+      - "{{ ansible_distribution_release | lower }}"
+      - "{{ ansible_distribution_release | lower }}-security"
+      - "{{ ansible_distribution_release | lower }}-updates"
+    register: file_stat
+    failed_when: not file_stat.stat.exists
+
+  - name: Check if deb string is present in main file
+    shell: "cat /etc/apt/sources.list.d/{{ item }}-proxy.list"
+    register: presence
+    loop:
+      - "{{ ansible_distribution_release | lower }}"
+      - "{{ ansible_distribution_release | lower }}-security"
+      - "{{ ansible_distribution_release | lower }}-updates"
+    failed_when: not presence.stdout.startswith("deb")
+    changed_when: false
+
+  - debug:
+      var: presence

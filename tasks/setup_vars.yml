@@ -1,0 +1,10 @@
+---
+- name: Include custom repository_paths
+  debug:
+    msg: Loaded custom repository_paths
+  when: (repository_paths | length) > 0
+
+- name: "Include {{ ansible_distribution }} {{ ansible_distribution_release }} repository_paths"
+  include_vars:
+    file: "vars/{{ ansible_distribution | lower }}_{{ ansible_distribution_release | lower }}.yml"
+  when: (repository_paths | length) == 0

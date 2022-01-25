@@ -1,0 +1,5 @@
+---
+repository_paths:
+  - { dist: "bullseye", path: "repository/debian_bullseye/", additional: "" }
+  - { dist: "bullseye-security", path: "repository/debian_bullseye_security/", additional: "" }
+  - { dist: "bullseye-updates", path: "repository/debian_bullseye_updates/", additional: "" }
