@@ -1,0 +1,5 @@
+---
+repository_paths:
+  - { dist: "focal", path: "repository/ubuntu_focal/", additional: "restricted universe multiverse" }
+  - { dist: "focal-security", path: "repository/ubuntu_focal_security/", additional: "restricted universe multiverse" }
+  - { dist: "focal-updates", path: "repository/ubuntu_focal_updates/", additional: "restricted universe multiverse" }
