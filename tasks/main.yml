@@ -19,7 +19,7 @@
 - name: Update Cache
   apt:
     update_cache: yes
-  when: update_cache
+  when: update_cache or upgrade_system
 
 - name: Upgrade System
   apt:
