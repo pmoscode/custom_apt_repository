@@ -1,0 +1,5 @@
+---
+repository_paths:
+  - { dist: "jammy", path: "repository/ubuntu_jammy/", additional: "restricted universe multiverse" }
+  - { dist: "jammy-security", path: "repository/ubuntu_jammy_security/", additional: "restricted universe multiverse" }
+  - { dist: "jammy-updates", path: "repository/ubuntu_jammy_updates/", additional: "restricted universe multiverse" }
